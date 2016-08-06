@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 public class MainActivity extends AppCompatActivity {
 
     int scoreA = 0;
@@ -51,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         scoreAView.setText(String.valueOf(scoreA));
         checkIfWin();
     }
+
     public void snitchB(View view) {
         if (endGame) {
             reset(view);
