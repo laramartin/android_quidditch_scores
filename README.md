@@ -5,7 +5,7 @@
 
 # Description 
 - App to track the scores during a Quidditch game
-- Quidditch is a game that appears on Harry Potter's books
+- Quidditch is a game that appears on Harry Potter's books (It's played in real life with some modifications i.e. no flying brooms :)).
 - [Read more](https://en.wikipedia.org/wiki/Quidditch)
 
 # Score System
