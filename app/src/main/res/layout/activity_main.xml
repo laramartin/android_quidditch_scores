@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Team A"
+                android:text="@string/title_a"
                 style="@style/team_title" />
 
             <TextView
@@ -40,14 +40,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="0"
+                android:text="@string/init_score"
                 style="@style/score"/>
 
             <Button
                 android:id="@+id/team_a_ten"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="+10 points"
+                android:text="@string/ten_points"
                 android:onClick="addTenToA"
                 style="@style/button" />
 
@@ -55,7 +55,7 @@
                 android:id="@+id/team_a_snitch"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="Snitch!"
+                android:text="@string/snitch"
                 android:onClick="snitchA"
                 style="@style/button"/>
 
@@ -77,7 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Team B"
+                android:text="@string/title_b"
                 style="@style/team_title"/>
 
             <TextView
@@ -85,14 +85,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="0"
+                android:text="@string/init_score"
                 style="@style/score"/>
 
             <Button
                 android:id="@+id/team_b_ten"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="+10 points"
+                android:text="@string/ten_points"
                 android:onClick="addTenToB"
                 style="@style/button"/>
 
@@ -100,7 +100,7 @@
                 android:id="@+id/team_b_snitch"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="Snitch!"
+                android:text="@string/snitch"
                 android:onClick="snitchB"
                 style="@style/button"/>
 
@@ -112,7 +112,7 @@
         android:id="@+id/reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="reset"
+        android:text="@string/reset"
         android:layout_gravity="center_horizontal"
         android:onClick="reset"
         style="@style/button"/>

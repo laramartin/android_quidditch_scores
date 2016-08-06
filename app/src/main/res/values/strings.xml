@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Quidditch Score Tracker</string>
+    <string name="title_a">Team A</string>
+    <string name="init_score">0</string>
+    <string name="ten_points">+10 points</string>
+    <string name="snitch">Snitch!</string>
+    <string name="title_b">Team B</string>
+    <string name="reset">Reset</string>
 </resources>
