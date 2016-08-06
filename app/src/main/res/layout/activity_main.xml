@@ -14,6 +14,7 @@
         android:src="@drawable/house_crests1"
         android:adjustViewBounds="true" />
 
+
     <LinearLayout
         android:id="@+id/score_layout"
         android:layout_width="match_parent"
@@ -31,11 +32,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Team A" />
+                android:layout_gravity="center_horizontal"
+                android:text="Team A"
+                style="@style/team_title" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="23"
                 style="@style/score"/>
 
@@ -53,6 +57,11 @@
 
         </LinearLayout>
 
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"/>
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -63,11 +72,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Team B" />
+                android:layout_gravity="center_horizontal"
+                android:text="Team B"
+                style="@style/team_title"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="23"
                 style="@style/score"/>
 
@@ -87,7 +99,7 @@
 
 
     </LinearLayout>
-    
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
