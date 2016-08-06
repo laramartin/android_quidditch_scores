@@ -9,70 +9,82 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    int score_a = 0;
-    int score_b = 0;
-    boolean check_if_win = false;
+    int scoreA = 0;
+    int scoreB = 0;
+    boolean endGame = false;
+    boolean snitchFound = false;
+    TextView scoreAView;
+    TextView scoreBView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        scoreAView = (TextView) findViewById(R.id.team_a_score);
+        scoreBView = (TextView) findViewById(R.id.team_b_score);
     }
 
     public void addTenToA(View view) {
-        score_a += 10;
-        TextView score = (TextView) findViewById(R.id.team_a_score);
-        score.setText(String.valueOf(score_a));
-        if (check_if_win){
-            checkIfWin();
+        if (endGame) {
+            reset(view);
         }
+        scoreA += 10;
+        scoreAView.setText(String.valueOf(scoreA));
+        checkIfWin();
     }
 
     public void addTenToB(View view) {
-        score_b += 10;
-        TextView score = (TextView) findViewById(R.id.team_b_score);
-        score.setText(String.valueOf(score_b));
-        if (check_if_win){
-            checkIfWin();
+        if (endGame) {
+            reset(view);
         }
+        scoreB += 10;
+        scoreBView.setText(String.valueOf(scoreB));
+        checkIfWin();
     }
 
     public void snitchA(View view) {
-        score_a += 150;
-        check_if_win = true;
-        TextView score = (TextView) findViewById(R.id.team_a_score);
-        score.setText(String.valueOf(score_a));
+        if (endGame) {
+            reset(view);
+        }
+        scoreA += 150;
+        snitchFound = true;
+        scoreAView.setText(String.valueOf(scoreA));
         checkIfWin();
     }
     public void snitchB(View view) {
-        score_b += 150;
-        check_if_win = true;
-        TextView score = (TextView) findViewById(R.id.team_b_score);
-        score.setText(String.valueOf(score_b));
+        if (endGame) {
+            reset(view);
+        }
+        scoreB += 150;
+        snitchFound = true;
+        scoreBView.setText(String.valueOf(scoreB));
         checkIfWin();
     }
 
     public void reset(View view) {
-        score_a = 0;
-        score_b = 0;
-        check_if_win = false;
-        TextView scoreA = (TextView) findViewById(R.id.team_a_score);
-        scoreA.setText(String.valueOf(score_a));
-        TextView scoreB = (TextView) findViewById(R.id.team_b_score);
-        scoreB.setText(String.valueOf(score_b));
+        scoreA = 0;
+        scoreB = 0;
+        endGame = false;
+        snitchFound = false;
+        scoreAView.setText(String.valueOf(this.scoreA));
+        scoreBView.setText(String.valueOf(this.scoreB));
     }
 
     public void checkIfWin(){
-        if (score_a != score_b){
-            if (score_a > score_b){
+        if (!snitchFound){
+            return;
+        }
+        if (scoreA != scoreB){
+            if (scoreA > scoreB){
                 Toast.makeText(MainActivity.this, "Team A wins!", Toast.LENGTH_SHORT).show();
-                check_if_win = false;
-            } else if (score_a < score_b){
+                endGame = true;
+            } else if (scoreA < scoreB){
                 Toast.makeText(MainActivity.this, "Team B wins!", Toast.LENGTH_SHORT).show();
-                check_if_win = false;
-            } else if (score_a == score_b){
-                Toast.makeText(MainActivity.this, "Continue Playing!", Toast.LENGTH_SHORT).show();
+                endGame = true;
             }
+        } else {
+            Toast.makeText(MainActivity.this, "Continue Playing!", Toast.LENGTH_SHORT).show();
+            endGame = false;
         }
     }
 }
