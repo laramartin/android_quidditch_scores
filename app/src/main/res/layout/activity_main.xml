@@ -14,7 +14,6 @@
         android:src="@drawable/house_crests1"
         android:adjustViewBounds="true" />
 
-
     <LinearLayout
         android:id="@+id/score_layout"
         android:layout_width="match_parent"
@@ -37,22 +36,27 @@
                 style="@style/team_title" />
 
             <TextView
+                android:id="@+id/team_a_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="23"
+                android:text="0"
                 style="@style/score"/>
 
             <Button
+                android:id="@+id/team_a_ten"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="+10 points"
-                style="@style/button"/>
+                android:onClick="addTenToA"
+                style="@style/button" />
 
             <Button
+                android:id="@+id/team_a_snitch"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="Snitch!"
+                android:onClick="snitchA"
                 style="@style/button"/>
 
         </LinearLayout>
@@ -77,35 +81,40 @@
                 style="@style/team_title"/>
 
             <TextView
+                android:id="@+id/team_b_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="23"
+                android:text="0"
                 style="@style/score"/>
 
             <Button
+                android:id="@+id/team_b_ten"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="+10 points"
+                android:onClick="addTenToB"
                 style="@style/button"/>
 
             <Button
+                android:id="@+id/team_b_snitch"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="Snitch!"
+                android:onClick="snitchB"
                 style="@style/button"/>
 
         </LinearLayout>
 
-
     </LinearLayout>
 
     <Button
+        android:id="@+id/reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="reset"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/button"
+        android:onClick="reset"
         style="@style/button"/>
 
 </LinearLayout>
